@@ -2,4 +2,4 @@
 
 Static files hosted by Github pages.
 
-krmckone.com
+For example: https://krmckone.com/game_of_life
