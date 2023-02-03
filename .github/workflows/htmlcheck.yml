@@ -1,0 +1,13 @@
+name: Proof HTML
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: anishathalye/proof-html@v2.0.2
+          with: directory ./pages
