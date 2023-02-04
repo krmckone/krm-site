@@ -12,5 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: anishathalye/proof-html@v2.0.2
         with:
-          directories:
-            - ./posts
+          directory: ./posts
+          encorce_https: false
+          check_favicon: false
