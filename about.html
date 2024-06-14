@@ -86,9 +86,9 @@
 <p>This site is a project in progress, both in the content and infrastructure. Today, it is a static content site hosted by GitHub pages at <a href="https://github.com/krmckone/krm-site">krm-site</a>. The domain krmckone.com is managed by cloudflare. The source of the site is a combination of markdown and HTML templates. Individual pages are written in markdown and a static site generator consumes those files and inserts the content into HTML templates to form the site itself that you are viewing now. For example, this about page is authored in markdown but is converted to HTML using a template.</p>
 <p>All of the implementation details of how this works are visible in the mentioned repositories.</p>
 <h4 id="static-site-generator">Static Site Generator</h4>
-<p>The static site generator is <a href="https://github.com/krmckone/lk-site">lk-site</a>. This is a custom tool implemented in Go that converts markdown content into full HTML pages. It takes as input markdown files and HTML template files and produces the HTML content that your browser is presenting to you. This is in continuous development and still could use a handful of features implemented for making more content on this site easier.</p>
-<p>The lk-site repository utilizes GitHub Actions for CI/CD workflows. For all pull requests, unit tests are run and merging is blocked until they pass. For pull requests that merge against main, a deploy is triggered that runs the tests again and builds the site itself. After building the static assets, they are uploaded to GitHub's artifact repository. A shell script then checks out krm-site and creates a new branch, adds any modifications, then creates a new pull request and automatically merges once any checks pass.</p>
-<p>Following the automatic merge in krm-site against main, the final deploy step is automatically managed by GitHub pages. Generally, changes that are merged against lk-site are visible at krmckone.com in 3-4 minutes.</p>
+<p>The static site generator is <a href="https://github.com/krmckone/lk-site">lk-site</a>. This is a custom tool implemented in Go that converts a combination of markdown content and raw HTML snippets into full HTML pages. It takes as input markdown files and HTML template files and produces the HTML content that your browser is presenting to you. This is in continuous development and still could use a handful of features implemented for making more content on this site easier. I try to track the big ones using GitHub issues for the lk-site repository.</p>
+<p>The lk-site repository utilizes GitHub Actions for CI/CD workflows. For all pull requests, unit tests are run and merging is blocked until they pass. For pull requests that merge against main, a deploy is triggered that runs the tests again and builds the site itself. After building the static assets, they are uploaded to GitHub's artifact repository. A shell script then checks out krm-site and creates a new branch, adds any modifications, then creates a new pull request and automatically merges once any checks pass. I will generally ask GitHub to merge the pull request against lk-site automatically by using <code>gh pr merge --auto</code>, which effectively kicks off the deploy.</p>
+<p>Following the automatic merge in krm-site against main, the final deploy step is automatically managed by GitHub pages. Generally, changes that are merged against lk-site are visible at krmckone.com after GitHub Pages finishes with its deploy after 1-2 minutes.</p>
 
           </div>
         </div>
@@ -99,7 +99,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>Portfolio by KRM, always in development. 2024.<br>
-Last updated 12 Jun 24 13:08 EDT<br>
+Last updated 14 Jun 24 16:31 EDT<br>
 <a href="https://github.com/krmckone/lk-site/blob/main/LICENSE">License.</a></p>
 <div>
   <a href="https://linkedin.com/in/krmckone" target="_blank" rel="noopener noreferrer">
